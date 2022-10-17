@@ -91,28 +91,28 @@ string[] FillNewArray(string[] Array, int Required)
 
 
 // как объединить 2 предыдущих метода в один? 
-// string[] GetNewArray(string[] StringArray, int Required)
-// {
-//     int counter = 0;
-//     for (int i = 0; i < StringArray.Length; i++)
-//     {
-//         if (StringArray[i].Length <= Required)
-//             counter++;
-//     }
+string[] GetNewArray(string[] StringArray, int Required)
+{
+    int counter = 0;
+    for (int i = 0; i < StringArray.Length; i++)
+    {
+        if (StringArray[i].Length <= Required)
+            counter++;
+    }
 
-//     // string[] result = new string[counter];
-//     // int j = 0;
+    string[] result = new string[counter];
+    int j = 0;
 
-//     // for (int i = 0; i < StringArray.Length; i++)
-//     // {
-//     //     if (StringArray[i].Length <= Required)
-//     //         {
-//     //             result[j] = StringArray[i];
-//     //             j++;
-//     //         }    
-//     // }
-//     // return result;
-// }
+    for (int i = 0; i < StringArray.Length; i++)
+    {
+        if (StringArray[i].Length <= Required)
+            {
+                result[j] = StringArray[i];
+                j++;
+            }    
+    }
+    return result;
+}
 
 void PrintStringArray(string[] array)
 {
@@ -134,6 +134,9 @@ PrintArray(inputArray);
 int RequiredLength = 3;
 Console.WriteLine(CountStringRequiredLength(inputArray,RequiredLength));
 PrintStringArray(FillNewArray(inputArray,RequiredLength));
+PrintStringArray(GetNewArray(inputArray,RequiredLength));
+
+
 
 // string[] newArray = new string[CountStringRequiredLength(inputArray,RequiredLength)];
 // int j = 0;
